@@ -1,0 +1,79 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego - ¿Eres gay?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            background: #2c3e50;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ecf0f1;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .btn-yes {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-yes:hover {
+            background-color: #2980b9;
+        }
+        .btn-no {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .btn-no:hover {
+            background-color: #c0392b;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Eres gay?</h1>
+        <button class="btn btn-yes" onclick="showMessage('¡Sauuuuuu!')">Sí</button>
+        <button class="btn btn-no" onclick="showMessage('No macho pecho pelufo')" onmouseover="moveButton(this)">No</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        function moveButton(button) {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            button.style.position = 'absolute';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        function showMessage(message) {
+            document.getElementById('message').textContent = message;
+        }
+    </script>
+</body>
+</html>
